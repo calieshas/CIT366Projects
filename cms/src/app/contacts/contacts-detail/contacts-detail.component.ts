@@ -13,6 +13,7 @@ export class ContactsDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // gets the selectedContact from contacts.component.html
   }
 
 }

@@ -1,7 +1,6 @@
 <div class="panel panel-default">
   <div class="panel panel-heading">
     <div href="#" class="list-group-item clearfix">
-        <!--*ngFor="let contact of contacts"-->
       <div class="panel pull-left">
         <h4 class="list-group-item-heading">Contacts</h4>
       </div>
@@ -10,13 +9,5 @@
         </div>
     </div>
     </div>
-    <div class="panel panel-body">
-      <div class="panel pull-left">
-        <p class="list-group-item-text">Name</p>
-        <!--change name ^ back to {{contact.name}}-->
-      </div>
-      <span class="panel pull-right">
-        <img src={{contact.imageUrl}} alt="{{contact.name}}" class="img-responsive" style="max-height: 50px;">
-      </span>
-    </div>
+  <cms-contact-item *ngFor="let contact of contacts" [contact]="contact"></cms-contact-item>
 </div>
