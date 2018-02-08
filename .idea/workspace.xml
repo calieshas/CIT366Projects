@@ -1,82 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28ca2302-14f2-49e7-8c5d-37ac99570487" name="Default" comment="2/6/18 all events ticketing fixed">
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/.idea/AllEventsTicketing.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/.project" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/.idea/AllEventsTicketing.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/.project" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/ApplicationController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/FrontController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/Loan.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/Security.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/Set.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/ShoppingCart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/TestShoppingCart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/VcObjects.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/ViewController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/checkout.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/css/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/_notes/untitled.jpg.mno" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/ads.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/bg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/concert.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/concert2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/family1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/lock.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/logo.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/logo2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/navbg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/navbg2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/images/untitled.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/startPage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/unitTest.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/AllEventsTicketing/unitTest.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/ApplicationController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/FrontController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/Loan.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/Security.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/Set.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/ShoppingCart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/TestShoppingCart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/VcObjects.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/ViewController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/checkout.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/css/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/_notes/untitled.jpg.mno" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/ads.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/bg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/concert.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/concert2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/family1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/lock.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/logo.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/logo2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/navbg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/navbg2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/images/untitled.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/startPage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/unitTest.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/AllEventsTicketing/unitTest.js" />
+    <list default="true" id="28ca2302-14f2-49e7-8c5d-37ac99570487" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/app.module.ts" afterPath="$PROJECT_DIR$/cms/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/contacts/contact-list/contact-list.component.html" afterPath="$PROJECT_DIR$/cms/src/app/contacts/contact-list/contact-list.component.html" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/contacts/contact-list/contact-list.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/contacts/contact-list/contact-list.component.ts" afterPath="$PROJECT_DIR$/cms/src/app/contacts/contact-list/contact-list.component.ts" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/contacts/contact.model.ts" afterPath="$PROJECT_DIR$/cms/src/app/contacts/contact.model.ts" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/contacts/contacts-detail/contacts-detail.component.html" afterPath="$PROJECT_DIR$/cms/src/app/contacts/contacts-detail/contacts-detail.component.html" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/contacts/contacts-detail/contacts-detail.component.ts" afterPath="$PROJECT_DIR$/cms/src/app/contacts/contacts-detail/contacts-detail.component.ts" />
-      <change beforePath="$PROJECT_DIR$/cms/src/app/contacts/contacts.component.html" afterPath="$PROJECT_DIR$/cms/src/app/contacts/contacts.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -193,16 +119,25 @@
       <workItem from="1516296823214" duration="6000" />
       <workItem from="1516297235533" duration="111000" />
       <workItem from="1517605619052" duration="104000" />
-      <workItem from="1517936943635" duration="181000" />
+      <workItem from="1517936943635" duration="231000" />
     </task>
+    <task id="LOCAL-00001" summary="2/6/18 all events ticketing fixed">
+      <created>1517937147026</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1517937147027</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402000" />
+    <option name="totallyTimeSpent" value="452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16614583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
