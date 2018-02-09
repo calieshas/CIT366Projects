@@ -8,13 +8,13 @@ import {Contact} from '../contact.model';
   styleUrls: ['./contacts-detail.component.css']
 })
 export class ContactsDetailComponent implements OnInit {
-    @Input contact: Contact;
+    @Input() contactD: Contact;
 
   constructor() { }
 
   ngOnInit() {
     // gets the selectedContact from contacts.component.html
-
+    console.log('contact =' + this.contactD);
   }
 
 }

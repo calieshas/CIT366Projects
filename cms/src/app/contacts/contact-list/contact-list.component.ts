@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Contact} from '../contact.model';
-import {OuterSubscriber} from 'rxjs/OuterSubscriber';
 
 @Component({
   selector: 'cms-contact-list',
