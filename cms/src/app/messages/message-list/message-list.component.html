@@ -9,12 +9,17 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-12">
-            <cms-contact-item></cms-contact-item>
+            <cms-message-item
+              *ngFor="let message of message">
+            </cms-message-item>
           </div>
         </div>
       </div>
       <div class="panel-footer">
-        <cms-message-edit></cms-message-edit>
+        <cms-message-edit
+          *ngFor="let message of messages"
+          (click) = "onAddMessage(message)">
+        </cms-message-edit>
       </div>
     </div>
   </div>

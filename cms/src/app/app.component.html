@@ -1,15 +1,12 @@
 <cms-header (selectedFeatureEvent) = switchView($event)></cms-header>
 <div class="container">
   <cms-documents
-    [documents] = "selectedFeature"
-    *ngIf="selectedFeature">
+    *ngIf="selectedFeature === 'documents'">
   </cms-documents>
   <cms-messages
-    [messages] = "selectedFeature"
-    *ngIf="selectedFeature">
+    *ngIf="selectedFeature ==='messages'">
   </cms-messages>
   <cms-contacts
-  [contacts] = "selectedFeature"
-  *ngIf="selectedFeature">
+  *ngIf="selectedFeature === 'contact'">
   </cms-contacts>
 </div>

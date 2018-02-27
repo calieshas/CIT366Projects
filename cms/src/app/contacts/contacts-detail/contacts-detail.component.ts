@@ -14,6 +14,7 @@ export class ContactsDetailComponent implements OnInit {
 
   ngOnInit() {
     // gets the selectedContact from contacts.component.html
+
     console.log('contact =' + this.contactD);
   }
 

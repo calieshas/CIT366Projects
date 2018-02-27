@@ -14,7 +14,7 @@ export class MessageListComponent implements OnInit {
     ];
 
   onAddMessage(message: Message) {
-    // pg 24 last step
+    this.messages.push(message);
   }
 
   constructor() { }
