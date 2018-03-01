@@ -9,13 +9,10 @@ import {ContactService} from '../contact.service';
   providers: [ContactService]
 })
 export class ContactListComponent implements OnInit {
-
-  // emits item of contact type called selectedContact
-  @Output() selectedContactEvent = new EventEmitter<Contact>();
   @Input() contact: Contact = null;
   @Input() contacts: Contact[] = [];
 
-  constructor(private contactService: ContactService){
+  constructor(private contactService: ContactService) {
     this.contacts = contactService.getContacts();
   }
 
@@ -23,9 +20,7 @@ export class ContactListComponent implements OnInit {
     console.log('this component was just loaded');
   }
 
-  // sends the selectedContact from "this" class up to the parent
   onSelected(contact: Contact) {
-    this.selectedContactEvent.emit(contact);
+    this.contactService.contactSelectedEvent.emit(contact);
   }
-
 }
