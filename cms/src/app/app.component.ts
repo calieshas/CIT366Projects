@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'cms-root',
@@ -6,9 +6,6 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @Input() selectedFeature = 'documents';
+ title = 'WeLearn CMS!';
 
-  switchView(selectedFeature: string) {
-    this.selectedFeature = selectedFeature;
-  }
 }

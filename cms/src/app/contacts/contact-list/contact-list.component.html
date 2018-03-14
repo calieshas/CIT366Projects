@@ -5,13 +5,12 @@
         <h4 class="list-group-item-heading">Contact List</h4>
       </div>
         <div class="panel pull-right">
-        <button class="btn btn-success">New Contact</button>
+        <a routerLink="/new" class="btn btn-success">New Contact</a>
         </div>
     </div>
     </div>
   <cms-contact-item
     *ngFor="let contact of contacts"
-    [contact]="contact"
-    (click) = "onSelected(contact)">
+    [contact]="contact">
   </cms-contact-item>
 </div>

@@ -5,6 +5,7 @@ import {Document} from './document.model';
 @Injectable()
 export class DocumentService {
   @Output() documentSelectedEvent = new EventEmitter<Document>();
+  @Output() documentChangedEvent = new EventEmitter<Document[]>();
   @Input() documents: Document[] = [];
 
   constructor() {
@@ -23,4 +24,18 @@ export class DocumentService {
     }
     return null;
   }
+
+  deleteDocument(document: Document) {
+    if (document === null) {
+      return;
+    }
+    const pos = this.documents.indexOf(document);
+      if (pos < 0) {
+        return;
+      }
+
+      this.documents.splice(pos, 1);
+      this.documentChangedEvent.emit(this.documents.slice());
+  }
+
 }

@@ -19,6 +19,11 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
 import {ContactService} from './contacts/contact.service';
 import {DocumentService} from './documents/document.service';
 import {MessageService} from './messages/message.service';
+import {AppRoutingModule} from './app-routing.module';
+import { DocumentViewComponent } from './documents/document-view/document-view.component';
+import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
+import {WindRefService} from './wind-ref.service';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 
 
 @NgModule({
@@ -36,12 +41,16 @@ import {MessageService} from './messages/message.service';
     MessagesComponent,
     MessageItemComponent,
     MessageEditComponent,
-    MessageListComponent
+    MessageListComponent,
+    DocumentViewComponent,
+    DocumentEditComponent,
+    ContactEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [ContactService, DocumentService, MessageService],
+  providers: [ContactService, DocumentService, MessageService, WindRefService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

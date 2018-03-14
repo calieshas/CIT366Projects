@@ -10,7 +10,7 @@ import {Contact} from '../../contacts/contact.model';
 })
 export class MessageItemComponent implements OnInit {
   @Input() message: Message;
-  @Input() messageSender: String = '';
+  messageSender: String = '';
 
   constructor(private contactService: ContactService) {  }
 

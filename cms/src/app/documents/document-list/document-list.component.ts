@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Document} from '../document.model';
 import {DocumentService} from '../document.service';
+import {Message} from '../../messages/message.model';
 
 @Component({
   selector: 'cms-document-list',
@@ -9,17 +10,17 @@ import {DocumentService} from '../document.service';
   providers: [DocumentService]
 })
 export class DocumentListComponent implements OnInit {
-  @Input() documents: Document[] = [];
+  documents: Document[] = [];
 
   constructor(private documentService: DocumentService) {
     this.documents = documentService.getDocuments();
   }
 
   ngOnInit() {
+    this.documentService.documentChangedEvent.subscribe((documents: Document[]) => {
+      this.documents = this.documents;
+      // what is the route back... navigate?
+    }
+    );
   }
-
-  onSelectedDocument(document: Document) {
-    this.documentService.documentSelectedEvent.emit(document);
-  }
-
 }

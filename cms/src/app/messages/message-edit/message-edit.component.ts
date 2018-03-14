@@ -9,7 +9,7 @@ import {MessageService} from '../message.service';
   styleUrls: ['./message-edit.component.css']
 })
 export class MessageEditComponent implements OnInit {
-  @Input() currentSender = 'Caliesha';
+  @Input() currentSender = '1';
   @ViewChild('subject') subject;
   @ViewChild('msgText') msgText;
   @Output() addMessageEvent = new EventEmitter<Message>();
