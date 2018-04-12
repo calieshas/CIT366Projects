@@ -3,7 +3,6 @@ import {Contact} from '../contact.model';
 import {ContactService} from '../contact.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-import {Document} from '../../documents/document.model';
 
 @Component({
   selector: 'cms-contact-edit',
@@ -28,19 +27,10 @@ export class ContactEditComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
-        this.id = params['id'];
-        if (this.id === null) {
-          this.editMode = false;
-          return;
-        }
-        this.originalContact = this.contactService.getContact(this.id);
-        if (this.originalContact === null) {
-          return;
-        }
-        this.editMode = true;
-        this.contact = JSON.parse(JSON.stringify(this.originalContact));
-        if (this.hasGroup = true) {
-          this.groupContacts = this.groupContacts.slice();
+        this.originalContact = this.contactService.getContact(params['id']);
+        if (this.originalContact) {
+          this.editMode = true;
+          this.contact = JSON.parse(JSON.stringify(this.originalContact));
         }
       }
     );
@@ -49,7 +39,8 @@ export class ContactEditComponent implements OnInit {
   onSubmit(form: NgForm) {
 
     let values = form.value;
-    let newContact = new Contact('', values.contactName, values.contactEmail, values.contactPhone, values.contactUrl, this.groupContacts);
+    let newContact = new Contact(String(this.contactService.getMaxId()),
+      values.contactName, values.contactEmail, values.contactPhone, values.contactUrl, this.groupContacts);
 
     if (this.editMode === true) {
       this.contactService.updateContact(this.originalContact, newContact);

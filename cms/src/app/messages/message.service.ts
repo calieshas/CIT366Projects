@@ -1,30 +1,31 @@
-import {EventEmitter, Injectable, Input, Output} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Message} from './message.model';
 import {MOCKMESSAGES} from './MOCKMESSAGES';
+import {HttpResponse, HttpClient, HttpHeaders} from '@angular/common/http';
+import 'rxjs/Rx'
+import {ContactService} from '../contacts/contact.service';
 import {Contact} from '../contacts/contact.model';
-import {Http} from '@angular/http';
 
 @Injectable()
 export class MessageService {
-  @Input() messages: Message[] = [];
-  @Output() messageChangeEvent = new EventEmitter<Message[]>();
-  maxMessageId: Number;
+  messages: Message[] = [];
+  messageChangeEvent = new EventEmitter<Message[]>();
+  maxMessageId: number;
+  messageDB: string = 'https://cms366-53ad7.firebaseio.com/messages.json';
 
 
-  constructor(private http: Http) {
-    this.initMessages()
+  constructor(private http: HttpClient, private contactService: ContactService) {
+    this.getMessages();
+    // this.messages = MOCKMESSAGES;
+    this.maxMessageId = this.getMaxId();
   }
 
   addMessage(message: Message) {
     this.messages.push(message);
-    this.messageChangeEvent.emit(this.messages.slice());
+    this.storeMessages();
   }
 
-  getMessages() {
-    return this.messages.slice();
-  }
-
-  getMessage(id: string) {
+  getMessage(id: string): Message {
     for (let message of this.messages) {
       if (message.id  === id) {
         return message;
@@ -35,8 +36,8 @@ export class MessageService {
 
   getMaxId(): number {
     let maxId = 0;
-    for (let message of this.messages) {
-      let currentId: number = parseInt(message.id);
+    for (let contact of this.messages) {
+      let currentId = +contact.id;
       if (currentId > maxId) {
         maxId = currentId;
       }
@@ -44,25 +45,28 @@ export class MessageService {
     return maxId;
   }
 
-  initMessages() {
-    this.http.get('https://cms366-53ad7.firebaseio.com/messages')
-      .map(
-        (response: Response) => {
-          const messages: Message[] = response.json().obj;
-          return messages;
-        }
-      )
-      .subscribe(
-        (messages: Message[]) => {
-          this.messages = messages;
-          this.maxMessageId = this.getMaxId();
-          this.messageChangeEvent.next(this.getMessages());
-        }
-      );
+  getMessages() {
+    if (this.messages.length > 0) {
+      return this.messages.slice();
+    }
+    this.contactService.getContacts();
+    this.contactService.contactListChangedEvent.subscribe((contacts: Contact[])=> {
+      this.http.get(this.messageDB)
+        .subscribe(
+          (messages: Message[]) => {
+            this.messages = messages;
+            this.maxMessageId = this.getMaxId();
+            this.messageChangeEvent.next(this.messages.slice());
+          }
+        );
+    })
   }
 
   storeMessages() {
-    this.http.put('https://cms366-53ad7.firebaseio.com/messages', JSON.stringify(this.messages))
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    this.http.put(this.messageDB, JSON.stringify(this.messages), {headers: headers})
       .subscribe(() => {
         this.messageChangeEvent.next(this.getMessages());
       });

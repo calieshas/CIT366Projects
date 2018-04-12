@@ -1,4 +1,3 @@
-<!--message display if touched-->
 
 <div class="panel panel-default">
   <div class="panel-body">
@@ -14,7 +13,7 @@
             [ngModel]="contact?.name"
             name="contactName"
             required
-            #name
+            #name="ngModel"
             size="120"
             max="120">
         </div>
@@ -29,12 +28,12 @@
             name="contactEmail"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
             required
-            #email
+            #email="ngModel"
             size="120"
             max="255">
         </div>
 
-        <div class="alert-danger, alert" *ngIf="!email.valid && email.touched">Enter a valid email address</div>
+
 
         <div class="col-sm-12 form-group">
           <label for="phone">Phone</label>
@@ -45,12 +44,13 @@
             [ngModel]="contact?.phone"
             name="contactPhone"
             pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*"
-            #phone
+            #phone="ngModel"
+            required
             size="150"
             max="255">
         </div>
 
-        <div class="alert-danger, alert" *ngIf="!phone.valid && phone.touched">Enter a valid phone number</div>
+
 
         <div class="col-sm-12 form-group">
           <label for="imageUrl">Image URL</label>
@@ -60,10 +60,26 @@
             class="form-control"
             [ngModel]="contact?.imageUrl"
             name="contactUrl"
-            #imageUrl
+            #imageUrl="ngModel"
             size="150"
             max="255">
         </div>
+      </div>
+
+
+      <div *ngIf="!email.valid && email.dirty">
+        <p class="alert alert-danger">Enter a valid email address.</p>
+      </div>
+
+      <div *ngIf="!phone.valid && phone.dirty">
+        <p class="alert alert-danger">Enter a valid phone number.</p>
+      </div>
+
+
+      <div class="row" *ngIf="!f.contact?.name.valid && !f.contact?.email.valid">
+           <div class="col">
+             <p class="alert alert-danger">The Name and Email are required.</p>
+           </div>
       </div>
 
       <div class="form-group">
@@ -71,7 +87,8 @@
 
         <div class="row" id="groupList"
              style="min-height: 3rem;"
-             dnd-droppable dropzones="['contactGroup']" (onDropSuccess)="addToGroup($event)">
+
+        dnd-droppable dropzones="['contactGroup']" (onDropSuccess)="addToGroup($event)">
 
           <div *ngFor="let contact of groupContacts; let i = index">
             <div>
@@ -83,7 +100,6 @@
         </div>
       </div>
 
-      <div class="alert-danger, alert" *ngIf="!name.valid && name.touched || !email.valid && email.touched">The Name and Email are required.</div>
 
       <div class="row">
         <div class="col-xs-12">

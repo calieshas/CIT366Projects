@@ -1,9 +1,10 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {EventEmitter, Injectable, OnDestroy, OnInit} from '@angular/core';
 import {MOCKDOCUMENTS} from './MOCKDOCUMENTS';
 import {Document} from './document.model';
 import {Subject} from 'rxjs/Subject';
-import {Http} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import {HttpResponse, HttpClient, HttpHeaders} from '@angular/common/http';
+import 'rxjs/Rx'
+import {Subscription} from 'rxjs/Subscription';
 
 @Injectable()
 export class DocumentService {
@@ -11,15 +12,15 @@ export class DocumentService {
   documentChangedEvent = new EventEmitter<Document[]>();
   documentListChangedEvent = new Subject<Document[]>();
   documents: Document[] = [];
+  subscription: Subscription;
   maxDocumentId: number;
+  documentDB: string = 'https://cms366-53ad7.firebaseio.com/documents.json';
 
 
-  constructor(private http: Http) {
-    this.initDocuments();
-  }
-
-  getDocuments(): Document[] {
-    return this.documents.slice();
+  constructor(private http: HttpClient) {
+    this.getDocuments();
+    // this.documents = MOCKDOCUMENTS;
+    this.maxDocumentId = this.getMaxId();
   }
 
   getDocument(id: string): Document {
@@ -41,7 +42,6 @@ export class DocumentService {
       }
 
       this.documents.splice(pos, 1);
-      let documentsListClone = this.documents.slice();
       this.storeDocuments();
   }
 
@@ -60,51 +60,53 @@ export class DocumentService {
     if (newDocument === null) {
       return;
     }
-    this.maxDocumentId++;
+    newDocument.id = String(++this.maxDocumentId);
     newDocument.id = this.maxDocumentId.toString();
     this.documents.push(newDocument);
-    let documentListClone: Document[] = this.documents.slice();
     this.storeDocuments();
   }
 
   updateDocument(originalDocument: Document, newDocument: Document) {
-    if (originalDocument || newDocument === null) {
-      return;
+
+    if (originalDocument === null || newDocument === null) {
+      return
     }
-    const pos = this.documents.indexOf(originalDocument);
+
+    let pos = this.documents.indexOf(originalDocument);
     if (pos < 0) {
       return
     }
 
     newDocument.id = originalDocument.id;
     this.documents[pos] = newDocument;
-    let documentsListClone: Document[] = this.documents.slice();
     this.storeDocuments();
   }
 
-  initDocuments() {
-    this.http.get('https://cms366-53ad7.firebaseio.com/documents')
-      .map(
-        (response: Response) => {
-          const documents: Document[] = response.json().obj;
-          return documents;
-        }
-      )
+  getDocuments() {
+    if (this.documents.length > 0) {
+      return this.documents.slice();
+    }
+    this.http.get(this.documentDB)
       .subscribe(
         (documents: Document[]) => {
           this.documents = documents;
           this.maxDocumentId = this.getMaxId();
-          this.documentListChangedEvent.next(this.getDocuments());
+          this.documentListChangedEvent.next(this.documents.slice());
+          return this.documents.slice();
         }
       );
   }
 
   storeDocuments() {
-    this.http.put('https://cms366-53ad7.firebaseio.com/documents', JSON.stringify(this.documents))
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    this.http.put(this.documentDB, JSON.stringify(this.documents), {headers: headers})
       .subscribe(() => {
         this.documentListChangedEvent.next(this.getDocuments());
       });
      }
+
 
 
 }

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import {RouterModule, Routes} from '@angular/router';
 import {DocumentsComponent} from './documents/documents.component';
 import {MessagesComponent} from './messages/messages.component';

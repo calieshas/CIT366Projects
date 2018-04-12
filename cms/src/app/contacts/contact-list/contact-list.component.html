@@ -20,7 +20,7 @@
     </div>
   </div>
   <cms-contact-item
-    *ngFor="let contact of contacts | contactsFilter:searchBox:term "
+    *ngFor="let contact of contacts | contactsFilter:[term] "
     [contact]="contact"
     routerLinkActive="active" [routerLink]="contact.id"
     dnd-draggable [dragEnabled]="true" [dragData]="contact" dropzones="['contactGroup']">

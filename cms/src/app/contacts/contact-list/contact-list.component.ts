@@ -8,13 +8,13 @@ import {Subscription} from 'rxjs/Subscription';
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css'],
 })
-export class ContactListComponent implements OnInit, OnDestroy {
+export class ContactListComponent {
   contacts: Contact[] = [];
   subscription: Subscription;
-  term: string;
+  term: string = "";
 
   constructor(private contactService: ContactService) {
-    this.contacts = contactService.getContacts();
+    this.contacts = this.contactService.getContacts();
   }
 
   ngOnInit() {
@@ -29,8 +29,8 @@ export class ContactListComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+  onSelected(contact: Contact) {
+    this.contactService.contactSelectedEvent.emit(contact);
   }
 
   onKeyPress(value:string) {

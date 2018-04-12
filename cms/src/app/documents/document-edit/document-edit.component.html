@@ -13,10 +13,10 @@
             type="text"
             id="name"
             class="form-control"
-            [ngModel]="originalDocument?.name"
-            name="documentTitle"
+            [ngModel]="originalDocument?.title"
+            name="title"
             required
-            #title
+            #title="ngModel"
             size="120"
             max="120">
         </div>
@@ -28,7 +28,7 @@
             id="description"
             class="form-control"
             [ngModel]="originalDocument?.description"
-            name="documentDesc"
+            name="description"
             size="120"
             max="255">
         </div>
@@ -41,14 +41,17 @@
             id="documentUrl"
             class="form-control"
             [ngModel]="originalDocument?.url"
-            name="documentUrl"
+            name="url"
             required
-            #url
+            #url="ngModel"
             size="150"
             max="255">
+        </div>
+      </div>
 
-          <div class="alert-danger, alert" *ngIf="!title.valid || !url.valid">The Document title and URL are required fields</div>
-
+      <div class="row" *ngIf="!f.valid">
+        <div class="col">
+          <p class="alert alert-danger">The Document title and URL are required fields</p>
         </div>
       </div>
 

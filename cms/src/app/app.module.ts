@@ -27,6 +27,7 @@ import {WindRefService} from './wind-ref.service';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 import { DndModule} from 'ng2-dnd';
 import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -53,20 +54,20 @@ import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    DndModule.forRoot()
+    DndModule.forRoot(),
+    HttpClientModule
   ],
   providers: [ContactService, DocumentService, MessageService, WindRefService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-//document edit - doc description doesn't work?
 
-//contacts are gone
-//add contact - email format? error messages don't show
-//contact edit - does not save
 
-//messages - can't add new message
-//contact edit - cant drag whole contact, only picture
-//header drop down?
+//doc description and name are switched?
+
+//contact searches one less letter than entered
+//cant drag whole contact, only picture
+
+
 
